@@ -1,21 +1,21 @@
 {
-  "name": "goit-js-hw-09",
+  "name": "MovieTime1",
   "version": "2.0.0",
   "description": "",
-  "homepage": "https://github.com/Sebastiand22/goit-js-hw-09",
+  "homepage": "https://github.com/Sebastiand22/MovieTime1",
   "scripts": {
     "start": "parcel src/*.html",
-    "build": "parcel build src/*.html --public-url /goit-js-hw-09/"
+    "build": "parcel build src/*.html --public-url /MovieTime1/"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Sebastiand22/goit-js-hw-09.git"
+    "url": "git+https://github.com/Sebastiand22/MovieTime1.git"
   },
   "keywords": [],
   "author": "Sebastian Dunduc <sebastiandunduc16@gmail.com>",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/goitacademy/parcel-project-template/issues"
+    "url": "https://github.com/Sebastiand22/MovieTime1/issues"
   },
   "dependencies": {
     "flatpickr": "^4.6.13",
