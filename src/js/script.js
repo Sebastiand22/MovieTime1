@@ -2,7 +2,7 @@
 // API Key și URL-ul API-ului
 const apiKey = 'd7474552131f2f0f921c13652e440703'; // înlocuiește cu cheia ta
 const apiUrl = 'https://api.themoviedb.org/3';
-const imageBaseUrl = 'https://image.tmdb.org/t/p/w200'; // Link-ul pentru imaginile filmelor
+const imageBaseUrl = 'https://image.tmdb.org/t/p/'; 
 
 // Funcție pentru a obține filmele populare la încărcarea paginii
 async function getPopularMovies() {
@@ -21,15 +21,17 @@ async function searchMovies(query) {
 // Funcție pentru a afișa filmele
 function displayMovies(movies) {
   const movieList = document.getElementById('movieList');
-  movieList.innerHTML = '';
+  movieList.innerHTML = ''; // Curățăm lista anterioară
 
   movies.forEach(movie => {
     const movieItem = document.createElement('div');
     movieItem.classList.add('movie-item');
 
     const movieImage = document.createElement('img');
-    movieImage.src = `${imageBaseUrl}${movie.poster_path}`;
+    // Asigură-te că utilizezi dimensiunea corectă pentru claritate
+    movieImage.src = `${imageBaseUrl}w500${movie.poster_path}`; // Schimbă 'w500' cu 'original' pentru claritate maximă
     movieImage.alt = movie.title;
+    movieImage.classList.add('movie-item-img'); // Adăugăm o clasă pentru stilizare
 
     const movieTitle = document.createElement('h3');
     movieTitle.textContent = movie.title;

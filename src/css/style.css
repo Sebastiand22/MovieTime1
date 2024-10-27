@@ -1,89 +1,183 @@
 
 
+
 .nav-bar {
-  height: 3.2rem;
+  height: 100px; /* Înălțimea navbar-ului */
   display: flex;
   justify-content: space-between;
-  align-items: start;
+  align-items: center; /* Aliniere verticală centrală */
   color: rgb(239, 239, 245);
   background-color: black;
+  position: relative; /* Context de poziționare pentru nav-menu */
 }
 
 .nav-logo {
-  width: 50px;
-  margin-left: 30px;
+  width: 100px; /* Lățimea logo-ului */
+  margin-left: 30px; /* Marginea stângă pentru logo */
 }
+
 .nav-title {
-  margin-left: auto;
-  margin-right: auto;
+  margin-left: auto; /* Marginea stângă automată */
+  margin-right: auto; /* Marginea dreaptă automată */
   color: white;
-  font-size: 20px;
-  margin-top: 10px;
+  font-size: 20px; /* Dimensiunea textului titlului */
+}
+
+.header {
+  position: relative; /* Necesită poziționare relativă pentru a fi un context pentru meniul nostru */
+}
+
+.nav-menu {
+  position: absolute; /* Poziționare absolută față de header */
+  top: 50px; /* Poziționează meniul imediat sub nav-bar */
+  left: 0; /* Aliniere pe partea stângă */
+  right: 0; /* Aliniere pe partea dreaptă */
+  background-color: black; /* Fundalul meniului */
+  display: none; /* Ascuns inițial */
+  z-index: 1; /* Asigură-te că este deasupra altor elemente */
+  transition: max-height 0.4s ease; /* Tranziție pe înălțime maximă */
+  max-height: 200px; /* Închis implicit */
+  overflow: hidden; /* Ascunde orice conținut care depășește max-height */
+}
+
+.nav-menu.active {
+  display: block; /* Afișează meniul */
+  max-height: 500px;
+  width: 50%; /* Ajustează această valoare în funcție de înălțimea meniului */
 }
 
 .nav-menu ul {
   margin: 0;
   padding: 0;
   display: flex;
-  flex-direction: column;
-  width: 100%;
-  padding: 3rem 0.6rem;
+  flex-direction: column; /* Meniul vertical */
 }
 
 .nav-menu ul li a {
   text-decoration: none;
   color: rgb(235, 226, 226);
   display: block;
+  padding: 10px 15px; /* Padding pentru link-uri */
 }
 
 .nav-menu li:hover {
-  background-color: aqua;
+  background-color: aqua; /* Fundal pe hover pentru link-uri */
 }
 
-.nav-menu {
-  position: absolute;
+/* Stiluri pentru header */
+.header {
+  margin-top: 10px; /* Spațiu între navbar și header */
+  padding-bottom: 20px; /* Poți ajusta această valoare pentru a adăuga un spațiu la baza header-ului */
+}
+
+.header-image {
+  width: 100%; /* Lățimea completă a imaginii header-ului */
+  height: auto; /* Menține proporțiile imaginii */
+}
+
+/* Stiluri pentru footer */
+footer {
+  background-color: black; /* Fundal pentru footer */
+  color: white; /* Culoarea textului din footer */
+  padding: 15px; /* Padding pentru footer */
+  text-align: center; /* Aliniere centrala */
+}
+
+
+.for-tablet {
+  display: none;
+}
+
+/* Stiluri de bază pentru containerul listei de filme */
+/* Container pentru lista de filme */
+.movie-list {
+  display: flex; /* Folosește flexbox pentru a alinia cardurile orizontal */
+  overflow-x: auto; /* Permite derularea orizontală */
+  height: calc(100vh - 260px); /* Înalțimea listei de filme */
+  padding: 20px; /* Spațiu interior */
+  background-color: #f0f0f0; /* Fundal deschis pentru a îmbunătăți contrastul */
+}
+
+/* Stil pentru fiecare card de film */
+.movie-item {
+  flex: 0 0 auto; /* Asigură-te că cardurile nu se vor micșora */
+  
+  margin: 0 10px; /* Spațiu între carduri */
+  background-color: white; /* Fundal alb pentru carduri */
+  border-radius: 8px; /* Colțuri rotunjite */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Umbră */
+  overflow: hidden; /* Ascunde conținutul care depășește dimensiunile cardului */
+  position: relative;
+  transition: transform 0.3s; /* Tranziție pentru efectul de hover */
+}
+
+/* Imaginea din card */
+.movie-item-img {
+  width: 100%; /* Lățimea completă a cardului */
+  height: auto; /* Menține proporțiile */
+  object-fit: cover; /* Umple cardul fără distorsiuni */
+  max-height: 100%; /* Opțional: limitează înălțimea maximă */
+}
+
+/* Titlul filmului */
+.movie-item h3 {
+  font-size: 1.2rem; /* Dimensiunea fontului pentru titlu */
+  color: #333; /* Culoarea titlului */
+  margin: 10px; /* Margine pentru titlu */
+  text-align: center; /* Centrarea textului */
+}
+
+/* Efect de hover pentru carduri */
+.movie-item:hover {
+  transform: scale(1.05); /* Mărirea cardului la hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Umbră mai mare la hover */
+}
+
+.darkmode-toggle {
+  position: fixed; /* Sau absolute, în funcție de layout */
+  top: -1px; /* Poziția dorită */
+  right: 18px;
+  z-index: 9999; /* Asigură-te că e deasupra */
+}
+
+/* Stil pentru titlul filmului */
+.movie-item h3 {
+  font-size: 1rem;
+  color: #333;
+  margin: 10px 0;
+  padding: 0 10px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* Imaginea din header */
+.header {
+}
+
+.header-image {
+  max-width: 100%;
+  height: auto;
+}.container {
+  height: 100vh; /* Înălțimea containerului ocupă întreaga fereastră */
   display: flex;
-  align-items: start;
+  flex-direction: column; /* Aranjează elementele pe verticală */
+}
+
+.footer-section {
   background-color: black;
-  top: -10rem;
-  width: 50%;
-  transition: all ease-in-out 0.4s;
-  z-index: 1;
-}
-
-.nav-menu.active {
-  top: 0;
-}
-.for-tablet{display: none;}
-
-#movieList {
-    display: flex;
+  display: flex;
   flex-direction: column;
-    gap: 1rem;
-    align-items: center;
-  }
-  .movie-item {
-    width: 150px;
-    text-align: center;
-  }
-  .movie-item img {
-    width: 100%;
-    border-radius: 5px;
-  }
+  align-items: center;
+  color: azure;
+  height: 90px;
 
-.footer-section{background-color: black;
-display: flex;
-flex-direction: column;
-align-items: center;
-color: azure;}
-.search-button{display: flex;
-flex-direction: row;
-justify-content: center;}
-
-
-
-
-
+}
+.search-button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
 
 /* @media (min-width: 768px) {
 
@@ -93,4 +187,3 @@ justify-content: center;}
 .for-tablet ul{display: flex;
 justify-content: center;}
 } */
-

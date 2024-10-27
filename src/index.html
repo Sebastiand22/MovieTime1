@@ -8,36 +8,42 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <div class="container"> 
-    <nav class="nav-bar">
-      <img src="./icons/logo-movie.svg" alt="error" class="nav-logo" />
-      <span class="nav-title">MENU</span>
-      <div class="nav-menu">
-        <ul>
-          <li class="nav-menu-link"><a href="#home">HOME</a></li>
-          <li class="nav-menu-link"><a href="#catalog">CATALOG</a></li>
-          <li class="nav-menu-link"><a href="#library">MY LIBRARY</a></li>
-        </ul>
-      </div>
-      <div class="for-tablet">
-        <ul>
-          <li class="nav-menu-link1"><a href="#home">HOME</a></li>
-          <li class="nav-menu-link1"><a href="#catalog">CATALOG</a></li>
-          <li class="nav-menu-link1"><a href="#library">MY LIBRARY</a></li>
-        </ul>
-      </div>
-    </nav>
-    <input type="text" id="searchInput" placeholder="Search for a movie...">
-    <button id="searchButton">Search</button>
-    <div id="movieList"></div>
+    <div class="container">
+      <nav class="nav-bar">
+        <img src="./icons/logo-movie.svg" alt="error" class="nav-logo" />
+        <span class="nav-title">MENU</span>
+        <div class="nav-menu">
+          <ul>
+            <li class="nav-menu-link"><a href="#home">HOME</a></li>
+            <li class="nav-menu-link"><a href="#catalog">CATALOG</a></li>
+            <li class="nav-menu-link"><a href="#library">MY LIBRARY</a></li>
+          </ul>
+        </div>
+        <div class="for-tablet">
+          <ul>
+            <li class="nav-menu-link1"><a href="#home">HOME</a></li>
+            <li class="nav-menu-link1"><a href="#catalog">CATALOG</a></li>
+            <li class="nav-menu-link1"><a href="#library">MY LIBRARY</a></li>
+          </ul>
+        </div>
+      </nav>
+      <!-- <section class="header">
+        <img class="header-image" src="./images/filmoteka.png" alt="" />
+      </section> -->
 
-    <footer>
-      <div class="footer-section">
-        <span>© 2023 | All Rights Reserved |</span>
-        <span>Developed with 🖤 by Sebastian Dunduc</span>
+      <input type="text" id="searchInput" placeholder="Search for a movie..." />
+      <button id="searchButton">Search</button>
+      <div class="movie-list" id="movieList">
+        <!-- Cardurile vor fi adăugate aici din JavaScript -->
       </div>
-    </footer>
-  </div>
+
+      <footer>
+        <div class="footer-section">
+          <span>© 2023 | All Rights Reserved |</span>
+          <span>Developed with 🖤 by Sebastian Dunduc</span>
+        </div>
+      </footer>
+    </div>
     <script src="./js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
     <script src="./js/nav-bar.js"></script>

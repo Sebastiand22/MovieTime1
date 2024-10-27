@@ -1,17 +1,18 @@
 
 const options = {
-    bottom: '64px', // default: '32px'
-    right: 'unset', // default: '32px'
-    left: '32px', // default: 'unset'
-    time: '0.5s', // default: '0.3s'
-    mixColor: '#fff', // default: '#fff'
-    backgroundColor: '#fff',  // default: '#fff'
-    buttonColorDark: '#100f2c',  // default: '#100f2c'
-    buttonColorLight: '#fff', // default: '#fff'
-    saveInCookies: false, // default: true,
-    label: '🌓', // default: ''
-    autoMatchOsTheme: true // default: true
-  }
-  
-  const darkmode = new Darkmode(options);
-  darkmode.showWidget();
+  bottom: 'unset', // Poziționarea pe partea de jos dezactivată
+  right: '32px',   // Poziționat la 32px de marginea dreaptă
+  left: 'unset',   // Dezactivează poziționarea pe partea stângă
+  top: '31px',     // Adaugă top pentru a-l pune la marginea de sus
+  time: '0.5s',
+  mixColor: '#fff',
+  backgroundColor: 'transparent',
+  buttonColorDark: 'transparent',
+  buttonColorLight: 'black',
+  saveInCookies: false,
+  label: '🌓',
+  autoMatchOsTheme: true
+};
+
+const darkmode = new Darkmode(options);
+darkmode.showWidget();
