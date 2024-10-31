@@ -1,189 +1,228 @@
+a {
+  text-decoration: none; /* Elimină sublinierea */
+  color: inherit; /* Setează culoarea linkului la culoarea textului părintelui */
+}
 
 
 
-.nav-bar {
-  height: 100px; /* Înălțimea navbar-ului */
+.container {
+  height: 100vh;
   display: flex;
+  flex-direction: column;
+}
+
+/* NAV BAR */
+.nav-bar {
+  height: 100px;
+  display: flex;
+  flex-direction: row;
   justify-content: space-between;
-  align-items: center; /* Aliniere verticală centrală */
-  color: rgb(239, 239, 245);
-  background-color: black;
-  position: relative; /* Context de poziționare pentru nav-menu */
+  align-items: center;
+  background-color:#e0e0e0f3;
+  color: #121212;
 }
-
 .nav-logo {
-  width: 100px; /* Lățimea logo-ului */
-  margin-left: 30px; /* Marginea stângă pentru logo */
+  width: 100px;
+  margin-left: 30px;
 }
-
-.nav-title {
-  margin-left: auto; /* Marginea stângă automată */
-  margin-right: auto; /* Marginea dreaptă automată */
-  color: white;
-  font-size: 20px; /* Dimensiunea textului titlului */
-}
-
-.header {
-  position: relative; /* Necesită poziționare relativă pentru a fi un context pentru meniul nostru */
+.nav-menu ul {
+  display: flex;
+  flex-direction: row;
+  gap: 100px;
 }
 
 .nav-menu {
-  position: absolute; /* Poziționare absolută față de header */
-  top: 50px; /* Poziționează meniul imediat sub nav-bar */
-  left: 0; /* Aliniere pe partea stângă */
-  right: 0; /* Aliniere pe partea dreaptă */
-  background-color: black; /* Fundalul meniului */
-  display: none; /* Ascuns inițial */
-  z-index: 1; /* Asigură-te că este deasupra altor elemente */
-  transition: max-height 0.4s ease; /* Tranziție pe înălțime maximă */
-  max-height: 200px; /* Închis implicit */
-  overflow: hidden; /* Ascunde orice conținut care depășește max-height */
-}
-
-.nav-menu.active {
-  display: block; /* Afișează meniul */
-  max-height: 500px;
-  width: 50%; /* Ajustează această valoare în funcție de înălțimea meniului */
-}
-
-.nav-menu ul {
-  margin: 0;
-  padding: 0;
   display: flex;
-  flex-direction: column; /* Meniul vertical */
+  flex-direction: row;
 }
 
-.nav-menu ul li a {
-  text-decoration: none;
-  color: rgb(235, 226, 226);
-  display: block;
-  padding: 10px 15px; /* Padding pentru link-uri */
+.nav-menu li{font-family: Roboto;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 16.41px;
+  text-align: center;
+  }
+  .nav-menu li:hover{color:#F87719}
+
+
+.search-button-section{display: flex;
+flex-direction: row;
+justify-content: center;
+margin-top: 50px;
+margin-bottom: 50px;
 }
 
-.nav-menu li:hover {
-  background-color: aqua; /* Fundal pe hover pentru link-uri */
+.search {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0; 
+  background: none;
+  border: none; 
+  cursor: pointer;
+
 }
 
-/* Stiluri pentru header */
-.header {
-  margin-top: 10px; /* Spațiu între navbar și header */
-  padding-bottom: 20px; /* Poți ajusta această valoare pentru a adăuga un spațiu la baza header-ului */
+.search svg {
+  width: 100%; 
+  height: 100%; 
 }
 
-.header-image {
-  width: 100%; /* Lățimea completă a imaginii header-ului */
-  height: auto; /* Menține proporțiile imaginii */
+.input{font-family: inherit;
+  border: 0;
+  border-bottom: 2px solid rgb(0, 0, 0);
+  outline: 0;
+  color: rgb(0, 0, 0);
+  font-size: 1.3rem;
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;}
+  
+
+
+
+  .movie-list::-webkit-scrollbar {
+    height: 10px; /* Înălțimea scrollbar-ului */
 }
 
-/* Stiluri pentru footer */
-footer {
-  background-color: black; /* Fundal pentru footer */
-  color: white; /* Culoarea textului din footer */
-  padding: 15px; /* Padding pentru footer */
-  text-align: center; /* Aliniere centrala */
+.movie-list::-webkit-scrollbar-track {
+    background: #d3d3d3; /* Fundalul track-ului scrollbar-ului */
+    border-radius: 5px; /* Rounding pentru track */
 }
 
-
-.for-tablet {
-  display: none;
+.movie-list::-webkit-scrollbar-thumb {
+    background: #555; /* Culoarea thumb-ului scrollbar-ului */
+    border-radius: 5px; /* Rounding pentru thumb */
 }
 
-/* Stiluri de bază pentru containerul listei de filme */
+.movie-list::-webkit-scrollbar-thumb:hover {
+    background: #F87719/* Culoarea thumb-ului la hover */
+}
 /* Container pentru lista de filme */
 .movie-list {
-  display: flex; /* Folosește flexbox pentru a alinia cardurile orizontal */
-  overflow-x: auto; /* Permite derularea orizontală */
-  height: calc(100vh - 260px); /* Înalțimea listei de filme */
-  padding: 20px; /* Spațiu interior */
-  background-color: #f0f0f0; /* Fundal deschis pentru a îmbunătăți contrastul */
+  display: flex;
+  overflow-x: auto;
+  height: calc(100vh - 260px);
+  padding: 20px;
+  background-color:  #e0e0e0f3;
+  
 }
 
 /* Stil pentru fiecare card de film */
 .movie-item {
-  flex: 0 0 auto; /* Asigură-te că cardurile nu se vor micșora */
-  
-  margin: 0 10px; /* Spațiu între carduri */
-  background-color: white; /* Fundal alb pentru carduri */
-  border-radius: 8px; /* Colțuri rotunjite */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Umbră */
-  overflow: hidden; /* Ascunde conținutul care depășește dimensiunile cardului */
+  flex: 0 0 auto;
+
+  margin: 0 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
   position: relative;
-  transition: transform 0.3s; /* Tranziție pentru efectul de hover */
+  transition: transform 0.3s;
 }
 
 /* Imaginea din card */
 .movie-item-img {
-  width: 100%; /* Lățimea completă a cardului */
-  height: auto; /* Menține proporțiile */
-  object-fit: cover; /* Umple cardul fără distorsiuni */
-  max-height: 100%; /* Opțional: limitează înălțimea maximă */
-}
-
-/* Titlul filmului */
-.movie-item h3 {
-  font-size: 1.2rem; /* Dimensiunea fontului pentru titlu */
-  color: #333; /* Culoarea titlului */
-  margin: 10px; /* Margine pentru titlu */
-  text-align: center; /* Centrarea textului */
-}
-
-/* Efect de hover pentru carduri */
-.movie-item:hover {
-  transform: scale(1.05); /* Mărirea cardului la hover */
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Umbră mai mare la hover */
-}
-
-.darkmode-toggle {
-  position: fixed; /* Sau absolute, în funcție de layout */
-  top: -1px; /* Poziția dorită */
-  right: 18px;
-  z-index: 9999; /* Asigură-te că e deasupra */
-}
-
-/* Stil pentru titlul filmului */
-.movie-item h3 {
-  font-size: 1rem;
-  color: #333;
-  margin: 10px 0;
-  padding: 0 10px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-}
-
-/* Imaginea din header */
-.header {
-}
-
-.header-image {
-  max-width: 100%;
+  width: 100%;
   height: auto;
-}.container {
-  height: 100vh; /* Înălțimea containerului ocupă întreaga fereastră */
-  display: flex;
-  flex-direction: column; /* Aranjează elementele pe verticală */
+  object-fit: cover;
+  max-height: 100%;
+}
+
+.movie-item:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .footer-section {
-  background-color: black;
   display: flex;
   flex-direction: column;
   align-items: center;
-  color: azure;
   height: 90px;
-
+  font-family: Roboto;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 16.41px;
+  text-align: center;
+  margin-top: 50px;
+  gap:15px;
 }
-.search-button {
+
+
+
+/* Tema întunecată (Dark Mode) */
+.darkmode {
+  background-color: #141414; /* Fundal negru */
+  color: #e0e0e0; /* Text deschis la culoare */
+}
+
+/* Fundal întunecat pentru navbar */
+.darkmode .nav-bar {
+  background-color: #111111;
+  color: #e0e0e0;
+}
+
+.darkmode .footer-section{ background-color: #141414;
+}
+
+.darkmode .movie-list{
+  background-color: #111111;
+}
+
+.darkmode .input{color: white;
+  border-bottom: 2px solid white}
+
+
+
+/* Stiluri pentru butonul Dark Mode */
+#theme-switch {
+  height: 50px;
+  width: 50px;
+  padding: 0;
+  border-radius: 50%;
+  background-color: #F87719;
   display: flex;
-  flex-direction: row;
   justify-content: center;
+  align-items: center;
+  border-color: transparent;
+  margin-right: 30px;
 }
 
-/* @media (min-width: 768px) {
+/* Iconul de comutare pentru dark mode */
+#theme-switch svg {
+  fill: rgb(243, 243, 243);
+}
 
-  .nav-menu{display: none;}
-  .nav-title{display: none;}
-.for-tablet{display: flex;}
-.for-tablet ul{display: flex;
-justify-content: center;}
-} */
+#theme-switch svg:last-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:first-child {
+  display: none;
+}
+
+.darkmode #theme-switch svg:last-child {
+  display: block;
+}
+
+/* Tranziție pentru schimbarea culorilor */
+body, .nav-bar, footer {
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.page-exit {
+  transform: translateX(-100%); /* Mută conținutul paginii curente spre stânga */
+}
+
+/* Tranziție pentru intrarea paginii noi */
+.page-enter {
+  transform: translateX(100%); /* Inițializează noua pagină în afara ecranului */
+}
+
+.page-enter-active {
+  transform: translateX(0); /* Aduce noua pagină la poziția inițială */
+  transition: transform 0.4s ease; /* Durata tranziției */
+}
+.fade {
+  opacity: 0;
+  transition: opacity 0.5s ease-out;
+}

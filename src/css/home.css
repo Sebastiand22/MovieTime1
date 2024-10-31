@@ -1,0 +1,36 @@
+.header {
+  height: 500px;
+  background-image: url(../images/home-image.webp);
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: 100%;
+  height: 100vh;
+  display: flex; /* Folosește flexbox pentru a alinia elementele */
+  align-items: center;
+}
+
+.header-description {
+    background: linear-gradient(83.16deg, #111111 33.85%, rgba(17, 17, 17, 0) 101.05%);
+  width: 40%;
+  height: 100%;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+h1 {
+    font-family: Roboto;
+    font-size: 53px;
+    font-weight: 700;
+    line-height: 52px;
+    margin-left: 45px;
+}
+.header-span {
+    font-family: Roboto;
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 27.75px;
+    text-align: left;
+    margin-left:45px;
+}

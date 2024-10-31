@@ -7,12 +7,20 @@ body {
     Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: #fafafa;
+  background-color: #e9e5e5f3;
   color: #212121;
   line-height: 1.5;
     margin:0;
     padding:0;
-}
+      transition: opacity 0.5s ease; /* Transiție pentru opacitate */
+      opacity: 1; /* Opacitate inițială */
+  }
+  
+  .hidden {
+      opacity: 0; /* Opacitate zero pentru a ascunde elementul */
+  }
+  
+
 
 
 img {
